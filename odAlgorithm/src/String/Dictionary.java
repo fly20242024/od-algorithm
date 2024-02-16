@@ -1,6 +1,5 @@
 package String;
 
-import java.util.HashSet;
 import java.util.Scanner;
 
 /**
@@ -18,22 +17,19 @@ public class Dictionary {
         Scanner s = new Scanner(System.in);
         String target = s.next();
         int number = s.nextInt();
-        HashSet<String> set = new HashSet<>();
+        int count = 0;
         for(int i = 0;i<number;i++){
             String read = s.next();
             if(target.length() > read.length()){
                 continue;
             }
             if(target.equals(read.substring(0,target.length()))){
-                set.add(read);
+                System.out.println(read);
+                count++;
             }
         }
-        if(set.isEmpty()){
+        if(count == 0){
             System.out.println(-1);
-        }else {
-            for(String result : set){
-                System.out.println(result);
-            }
         }
     }
 }
